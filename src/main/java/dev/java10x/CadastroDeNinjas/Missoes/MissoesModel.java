@@ -15,10 +15,15 @@ import lombok.NoArgsConstructor;
 public class MissoesModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+@Column(name = "id")
     private Long id;
+
+    @Column(name = "nome")
     private String nome;
+
+    @Column(name = "dificuldade")
     private String Dificuldade;
+
     //uma missão pode ter vários ninjas
     @OneToMany(mappedBy = "missoes")
     private NinjaModel ninja;
